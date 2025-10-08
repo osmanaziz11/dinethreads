@@ -1,10 +1,33 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
+import { Inter } from "next/font/google";
+import Image from "next/image";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+// Reusable Action Button
+function ActionButton({ btnText = "Browse Products", classes }) {
+  return (
+    <div className="relative ms-2">
+      <button
+        className={`${styles.btn} ${styles.btnPrimary} shadow-lg ${classes}`}
+      >
+        {btnText}
+      </button>
+      <div className={`${styles.btnEffect} shadow-lg`} />
+    </div>
+  );
+}
 
 const HeroSection = () => {
   return (
     <section className={styles.hero}>
-      <div className={`${styles.heroContent}`}>
+      {/* Hero Content */}
+      <div className={styles.heroContent}>
+        {/* Eyebrow */}
         <div className={styles.heroEyebrow}>
           <svg
             className={styles.trustIcon}
@@ -16,11 +39,15 @@ const HeroSection = () => {
           Global Production • Pakistan Made • UK Focused
         </div>
 
+        {/* Heading */}
         <h1>
-          Premium <span className={styles.heroHighlight}>custom uniforms</span>{" "}
-          & branded merchandise — made in Pakistan for the world
+          Premium <span className={styles.brackets}>[</span>{" "}
+          <span className={styles.heroHighlight}>custom uniforms</span>{" "}
+          <span className={styles.brackets}>]</span> & branded merchandise —
+          made in Pakistan for the world
         </h1>
 
+        {/* Lead Paragraph */}
         <p className={styles.lead}>
           We design, produce, and ship high-quality custom apparel including
           t-shirts, polos, chef uniforms, caps, bags, and packaging.
@@ -28,21 +55,7 @@ const HeroSection = () => {
           special focus on the UK market.
         </p>
 
-        <div className={styles.heroCtas}>
-          <a href="#quote" className={`${styles.btn} ${styles.btnPrimary}`}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-            Request a Quote
-          </a>
-          <a
-            href="#categories"
-            className={`${styles.btn} ${styles.btnSecondary}`}
-          >
-            Browse Products
-          </a>
-        </div>
-
+        {/* Trust Badges */}
         <div className={styles.trustBadges}>
           <div className={styles.trustBadge}>
             <svg
@@ -54,6 +67,7 @@ const HeroSection = () => {
             </svg>
             XS to XL Sizes
           </div>
+
           <div className={styles.trustBadge}>
             <svg
               className={styles.trustIcon}
@@ -64,6 +78,7 @@ const HeroSection = () => {
             </svg>
             Multiple Fabrics
           </div>
+
           <div className={styles.trustBadge}>
             <svg
               className={styles.trustIcon}
@@ -75,18 +90,33 @@ const HeroSection = () => {
             Custom Logos
           </div>
         </div>
+
+        {/* CTA */}
+        <div className={styles.heroCtas}>
+          <ActionButton classes="text-md" />
+        </div>
       </div>
 
-      <div className={`${styles.heroVisual} `}>
-        <div className={styles.productShowcase}>
-          <div className={styles.showcaseHeader}>
-            <div className={styles.showcaseTitle}>Our Products</div>
-            <div className={styles.showcaseBadge}>Premium Quality</div>
+      {/* Hero Visual */}
+      <div className={`${styles.heroVisual} ${inter.className}`}>
+        <ActionButton btnText="T-shirt designs" classes="text-md" />
+
+        <div className="flex flex-1 w-full justify-center items-center relative">
+          <div className="absolute z-50 w-full h-full -top-[64px] left-0">
+            <Image
+              src="/images/t-shirt-text.png"
+              alt="T-shirt"
+              width={480}
+              height={525}
+              className="z-50 object-contain"
+            />
           </div>
 
-          <div className={styles.showcaseFooter}>
-            <div>100% Cotton • Poly Blends</div>
-            <div>Ships Worldwide</div>
+          <div className="w-full absolute bottom-10">
+            <ActionButton
+              btnText="TELL US YOUR IDEA WE WILL BRING YOUR IDEA TO VISION"
+              classes="text-sm px-12"
+            />
           </div>
         </div>
       </div>

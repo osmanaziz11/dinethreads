@@ -24,7 +24,11 @@ body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, var(--bg-light) 0%, #fff 30%);
+  background: radial-gradient(
+    rgba(0, 168, 150, 0.08) 0%,
+    rgba(2, 128, 144, 0.05) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -249,7 +253,7 @@ body {
 
 /* ========== FOOTER ========== */
 footer {
-  background: var(--bg-dark);
+  background: linear-gradient(135deg, #17635c, var(--bg-dark));
   color: rgba(255, 255, 255, 0.8);
   padding: 60px 8% 30px;
 }

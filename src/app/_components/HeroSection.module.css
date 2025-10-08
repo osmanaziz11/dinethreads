@@ -16,13 +16,18 @@
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 480px;
-  gap: 60px;
-  align-items: center;
-  padding: 142px 19% 80px;
+  gap: 4px;
+  min-height: 100vh;
+
+  /* center content with max-width */
+  max-width: 1200px; /* adjust as needed */
   margin: 0 auto;
+
+  /* fixed padding, not percentage-based */
+  padding: 161px 0px 181px;
+
   position: relative;
   overflow: hidden;
 }
@@ -35,24 +40,7 @@
   right: -30%;
   width: 80%;
   height: 120%;
-  background: radial-gradient(
-    ellipse,
-    rgba(0, 168, 150, 0.08) 0%,
-    rgba(2, 128, 144, 0.05) 40%,
-    transparent 70%
-  );
-  animation: float 8s ease-in-out infinite;
   z-index: -1;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(3deg);
-  }
 }
 
 /* Hero Left Content */
@@ -100,10 +88,14 @@
 
 .hero .lead {
   color: rgba(2, 53, 53, 0.8);
-  font-size: 18px;
+  max-width: 670px;
   margin-bottom: 32px;
+  font-size: 20px;
   line-height: 1.6;
-  max-width: 580px;
+}
+
+.brackets {
+  color: #edaf37 !important;
 }
 
 /* CTA Buttons */
@@ -111,35 +103,52 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 12px;
   font-weight: 700;
-  font-size: 16px;
+  padding: 9px 33px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.17, 0.85, 0.45, 1);
-  text-decoration: none;
-  border: none;
+}
+
+.btnEffect {
+  z-index: -1;
+  background: #1d6058;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 9px;
+  left: -8px;
+}
+
+.btnPrimary {
+  color: #fff;
+  background: #ebaf41;
   position: relative;
   overflow: hidden;
 }
 
-.btnPrimary {
-  background: linear-gradient(135deg, #145a53, #1a7067);
-  background: linear-gradient(353deg, #ff990a, #fdd835) !important;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 168, 150, 0.2);
+.btnPrimary::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  pointer-events: none;
 }
 
-.btnPrimary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 168, 150, 0.3);
+.btnPrimary:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
 }
 
 .btnSecondary {
@@ -189,116 +198,10 @@
 /* Hero Visual */
 .heroVisual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-.productShowcase {
-  width: 100%;
-  max-width: 450px;
-  height: 491px;
-  border-radius: 24px;
-  padding: 24px;
-  background: #1d6059;
-  color: #ffffff;
-  box-shadow: 0 24px 80px rgba(1, 31, 31, 0.4);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-
-.productShowcase::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #00a896, #028090);
-}
-
-.showcaseHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.showcaseTitle {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.showcaseBadge {
-  background: rgba(0, 168, 150, 0.2);
-  color: #00a896;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.productsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.productItem {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.17, 0.85, 0.45, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.productItem:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.productIcon {
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #00a896, #028090);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 12px;
-  font-weight: 800;
-  font-size: 24px;
-  color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 168, 150, 0.2);
-}
-
-.productName {
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-.productDesc {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.showcaseFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 600;
 }
 
 /* Scroll reveal animations */
@@ -314,22 +217,6 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1100px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-    padding-top: 120px;
-  }
-
-  .heroVisual {
-    order: -1;
-  }
-
-  .productsGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   .hero {
@@ -369,5 +256,316 @@
   .trustBadges {
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+/* Smooth scaling between 1250px and 1024px */
+@media (max-width: 1250px) {
+  .hero {
+    max-width: 95%;
+    padding: 140px 20px 160px;
+    grid-template-columns: 1fr 420px;
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(26px, 3.2vw, 38px);
+    margin: 0 0 20px 0;
+  }
+
+  .hero .lead {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .heroEyebrow {
+    font-size: 11px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .trustBadge {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .trustIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+
+  .btnEffect {
+    top: 7px;
+    left: -6px;
+  }
+
+  .heroCtas {
+    margin-top: 28px;
+    gap: 12px;
+  }
+
+  .heroVisual {
+    transform: scale(0.88);
+  }
+}
+
+@media (max-width: 1150px) {
+  .hero {
+    padding: 120px 20px 140px;
+    grid-template-columns: 1fr 380px;
+    gap: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(24px, 3vw, 34px);
+    margin: 0 0 16px 0;
+  }
+
+  .hero .lead {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    padding: 6px 10px;
+    margin-bottom: 14px;
+  }
+
+  .trustBadge {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .btn {
+    padding: 7px 20px;
+    font-size: 13px;
+  }
+
+  .heroCtas {
+    margin-top: 24px;
+  }
+
+  .heroVisual {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 100px 20px 120px;
+    grid-template-columns: 1fr 340px;
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(22px, 2.8vw, 30px);
+    margin: 0 0 14px 0;
+  }
+
+  .hero .lead {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .heroEyebrow {
+    font-size: 9px;
+    padding: 5px 10px;
+    margin-bottom: 12px;
+  }
+
+  .trustBadges {
+    gap: 10px;
+  }
+
+  .trustBadge {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .trustIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .btn {
+    padding: 6px 18px;
+    font-size: 12px;
+  }
+
+  .btnEffect {
+    top: 6px;
+    left: -5px;
+  }
+
+  .heroCtas {
+    margin-top: 20px;
+  }
+
+  .heroVisual {
+    transform: scale(0.72);
+  }
+}
+
+/* Switch to single column below 900px */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 20px 80px;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .heroContent {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    max-width: 800px;
+    margin: 0 0 20px 0;
+  }
+
+  .hero .lead {
+    font-size: 16px;
+    max-width: 600px;
+    margin-bottom: 28px;
+  }
+
+  .heroEyebrow {
+    font-size: 11px;
+    padding: 7px 14px;
+    margin-bottom: 20px;
+  }
+
+  .trustBadges {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .trustBadge {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .trustIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .btn {
+    padding: 9px 28px;
+    font-size: 14px;
+  }
+
+  .btnEffect {
+    top: 8px;
+    left: -7px;
+  }
+
+  .heroCtas {
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .heroVisual {
+    transform: scale(1);
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 16px 60px;
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(26px, 6vw, 34px);
+    margin: 0 0 18px 0;
+  }
+
+  .hero .lead {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .heroEyebrow {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .trustBadge {
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+  .btn {
+    padding: 8px 24px;
+    font-size: 13px;
+  }
+
+  .heroVisual {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 16px 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(22px, 7vw, 28px);
+  }
+
+  .hero .lead {
+    font-size: 14px;
+  }
+
+  .heroEyebrow {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .trustBadges {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .trustBadge {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .heroVisual {
+    max-width: 320px;
   }
 }
