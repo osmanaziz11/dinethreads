@@ -525,7 +525,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 16px 50px;
+    padding: 60px 16px 20px;
   }
 
   .hero h1 {

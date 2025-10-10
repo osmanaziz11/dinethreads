@@ -3,15 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
-import React, { useState } from "react";
 import HamburgerIcon from "./HamburgerIcon";
 import { usePathname } from "next/navigation";
+import React, { useState, useEffect } from "react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const navItems = [
+    { href: "/", label: "Home" },
     { href: "/portfolio", label: "Portfolio & Gallery" },
     { href: "/products", label: "Products" },
     { href: "/faqs", label: "FAQs" },
@@ -51,6 +56,8 @@ function Navbar() {
             key={item.href}
             href={item.href}
             className={`${item.cta ? "nav-cta px-4 py-2 rounded-md" : ""} ${
+              item.label == "Home" ? "hidden" : "visible"
+            } ${
               pathname === item.href ? "active text-yellow-400" : "text-white"
             }`}
           >
@@ -64,7 +71,7 @@ function Navbar() {
         <HamburgerIcon isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
       </div>
 
-      {/* Mobile Menu (separate component) */}
+      {/* Mobile Menu */}
       <MobileMenu
         isOpen={isOpen}
         setIsOpen={setIsOpen}

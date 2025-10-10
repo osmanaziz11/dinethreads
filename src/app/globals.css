@@ -398,3 +398,24 @@ footer {
     width: calc(100% - 28px);
   }
 }
+
+/* nprogress custom styles */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: linear-gradient(353deg, #ff990a, #fdd835) !important;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 0 10px rgba(255, 153, 10, 0.4);
+}
+
+#nprogress .peg {
+  display: none !important;
+}
