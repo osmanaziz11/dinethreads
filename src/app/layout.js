@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Navbar, Footer } from "@/components";
 import ProgressBar from "@/components/ProgressBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function RootLayout({ children }) {
   return (
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
       <body className={`antialiased`}>
         <ProgressBar />
         <Navbar />
+        <WhatsAppButton />
         {children}
         <Footer />
       </body>
