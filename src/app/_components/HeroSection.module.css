@@ -19,14 +19,14 @@
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 4px;
-  min-height: 100vh;
+  min-height: 76vh;
 
   /* center content with max-width */
   max-width: 1200px; /* adjust as needed */
   margin: 0 auto;
 
   /* fixed padding, not percentage-based */
-  padding: 161px 0px 181px;
+  padding: 161px 0px 0;
 
   position: relative;
   overflow: hidden;

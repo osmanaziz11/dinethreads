@@ -14,7 +14,7 @@ function Navbar() {
   const navItems = [
     { href: "/portfolio", label: "Portfolio & Gallery" },
     { href: "/products", label: "Products" },
-    { href: "/about", label: "About" },
+    { href: "/faqs", label: "FAQs" },
     { href: "/contact", label: "Contact" },
     { href: "/quote", label: "Get a Quote", cta: true },
   ];
@@ -26,7 +26,7 @@ function Navbar() {
     >
       {/* Brand */}
       <Link href="/" className="brand flex items-center gap-3">
-        <div className="rounded-full shadow-lg border-2 overflow-hidden">
+        <div className="rounded-full shadow-lg border-2 overflow-hidden w-[51px] h-[51px]">
           <Image
             src="/logo.png"
             alt="DineThreads Logo"

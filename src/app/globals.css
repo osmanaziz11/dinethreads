@@ -127,7 +127,7 @@ body {
 
 .nav-links a {
   padding: 10px 0px;
-  border-radius: 10px;
+  border-radius: 5px;
   color: var(--primary);
   font-weight: 600;
   font-size: 15px;
@@ -158,7 +158,7 @@ body {
 
 .nav-cta {
   box-shadow: 0 6px 32px #595959;
-  color: #000 !important;
+  color: var(--primary) !important;
   background: linear-gradient(353deg, #ff990a, #fdd835) !important;
   padding: 10px 16px !important;
 }

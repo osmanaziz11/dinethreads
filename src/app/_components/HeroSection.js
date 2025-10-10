@@ -24,11 +24,11 @@ function ActionButton({ btnText = "Browse Products", classes }) {
 
 const HeroSection = () => {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero}`}>
       {/* Hero Content */}
       <div className={styles.heroContent}>
         {/* Eyebrow */}
-        <div className={styles.heroEyebrow}>
+        <div className={`${styles.heroEyebrow} lg:mt-0 mt-16`}>
           <svg
             className={styles.trustIcon}
             viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const HeroSection = () => {
         </div>
 
         {/* Heading */}
-        <h1>
+        <h1 className="">
           Premium <span className={styles.brackets}>[</span>{" "}
           <span className={styles.heroHighlight}>custom uniforms</span>{" "}
           <span className={styles.brackets}>]</span> & branded merchandise —
@@ -101,8 +101,8 @@ const HeroSection = () => {
       <div className={`${styles.heroVisual} ${inter.className}`}>
         <ActionButton btnText="T-shirt designs" classes="text-md" />
 
-        <div className="flex flex-1 w-full justify-center items-center relative">
-          <div className="absolute z-50 w-full h-full -top-[64px] left-0">
+        <div className="flex flex-col w-full  relative sm:-top-[62px] -top-[40px]">
+          <div className="z-50 w-full h-full">
             <Image
               src="/images/t-shirt-text.png"
               alt="T-shirt"
@@ -112,7 +112,7 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="w-full absolute bottom-10">
+          <div className="w-full">
             <ActionButton
               btnText="TELL US YOUR IDEA WE WILL BRING YOUR IDEA TO VISION"
               classes="text-sm px-12"

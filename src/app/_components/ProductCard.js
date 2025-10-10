@@ -7,7 +7,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-function ProductCard() {
+function ProductCard({ image }) {
   return (
     <div
       className="w-80 h-[420px] rounded-2xl shadow-xl overflow-hidden cursor-pointer group relative 
@@ -17,7 +17,7 @@ function ProductCard() {
       {/* Product Image */}
       <div className="w-full h-[63%] absolute top-1 left-0 z-50 flex justify-center items-center">
         <Image
-          src="/images/t-shirt.png"
+          src={image || "/images/t-shirt.png"}
           alt="t-shirt"
           fill
           className="object-contain"

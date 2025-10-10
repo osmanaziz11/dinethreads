@@ -1,0 +1,90 @@
+/* ========== WHY CHOOSE US SECTION ========== */
+.why-us {
+  padding: 80px 8%;
+  position: relative;
+  background: linear-gradient(180deg, white 0%, var(--bg-light) 100%);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 18px;
+  color: rgba(2, 53, 53, 0.7);
+  line-height: 1.7;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(2, 53, 53, 0.08);
+  transition: all 0.4s var(--ease);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(2, 37, 37, 0.1);
+}
+
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 168, 150, 0.1),
+    rgba(2, 128, 144, 0.05)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.benefit-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--secondary);
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.benefit-card p {
+  font-size: 15px;
+  color: rgba(2, 53, 53, 0.7);
+  line-height: 1.7;
+}

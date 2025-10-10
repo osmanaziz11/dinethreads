@@ -1,0 +1,52 @@
+/* Section Styles */
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  background: linear-gradient(181deg, #e3f7ef 0%, #f3f3f3 30%);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 18px;
+  color: rgba(2, 53, 53, 0.7);
+  line-height: 1.7;
+}
+
+/* ========== CATEGORIES SECTION ========== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  row-gap: 24px;
+  column-gap: 0;
+  width: 100%;
+  place-items: center;
+  max-width: 1400px;
+}
