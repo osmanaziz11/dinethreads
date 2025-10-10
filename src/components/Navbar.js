@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <nav
-      className="navbar flex items-center justify-between px-4 py-3 relative"
+      className="navbar flex items-center justify-between sm:px-4 px-3 py-3 relative"
       id="navbar"
     >
       {/* Brand */}

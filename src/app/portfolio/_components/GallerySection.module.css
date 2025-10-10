@@ -116,3 +116,11 @@
   height: 16px;
   fill: var(--secondary);
 }
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(306px, 1fr));
+    gap: 32px;
+  }
+}

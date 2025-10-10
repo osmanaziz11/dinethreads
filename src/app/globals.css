@@ -50,7 +50,6 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 12px 20px;
   backdrop-filter: blur(10px) saturate(180%);
   background: linear-gradient(
     180deg,
@@ -391,5 +390,11 @@ footer {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    width: calc(100% - 28px);
   }
 }

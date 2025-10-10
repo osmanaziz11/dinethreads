@@ -12,7 +12,7 @@ function ProductCard({ image }) {
     <div
       className="w-80 h-[420px] rounded-2xl shadow-xl overflow-hidden cursor-pointer group relative 
                  transform transition-all duration-500 ease-out 
-                 hover:-translate-y-2"
+                 hover:-translate-y-2 active:-translate-y-2"
     >
       {/* Product Image */}
       <div className="w-full h-[63%] absolute top-1 left-0 z-50 flex justify-center items-center">
@@ -39,6 +39,7 @@ function ProductCard({ image }) {
         className="absolute inset-0 bg-[#2F6F69]
         [clip-path:polygon(0%_0%,100%_0%,100%_50%,0%_50%)]
         group-hover:[clip-path:polygon(0%_0%,100%_0%,100%_35%,0%_65%)]
+        group-active:[clip-path:polygon(0%_0%,100%_0%,100%_35%,0%_65%)]
         transition-all duration-500 ease-in-out"
       >
         <div
