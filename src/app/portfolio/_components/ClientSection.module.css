@@ -36,7 +36,9 @@
 .clients-grid {
   display: flex;
   justify-content: center;
-  align-items: centerW;
+  align-items: center;
+  flex-wrap: wrap;
+
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
