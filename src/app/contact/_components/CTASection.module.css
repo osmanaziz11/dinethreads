@@ -1,0 +1,35 @@
+.faq-section {
+  padding: 60px 8%;
+  background: rgba(0, 168, 150, 0.05);
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.faq-text {
+  font-size: 18px;
+  color: rgba(2, 53, 53, 0.7);
+  margin-bottom: 32px;
+}
+
+.faq-link {
+  display: inline-block;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #145a53, #1a7067);
+}

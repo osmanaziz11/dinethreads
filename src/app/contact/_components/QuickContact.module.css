@@ -1,0 +1,144 @@
+/* Quick Contact Section */
+.quick-contact {
+  padding: 80px 8%;
+  background: white;
+}
+
+.quick-contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: rgba(2, 53, 53, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quick-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.quick-option {
+  background: var(--bg-light);
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(2, 53, 53, 0.08);
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+
+.quick-option:hover {
+  border-color: var(--secondary);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(2, 37, 37, 0.12);
+}
+
+.quick-option-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  margin: 0 auto 24px;
+}
+
+.quick-option h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.quick-option p {
+  color: rgba(2, 53, 53, 0.7);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.quick-option-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+
+.quick-option-link:hover {
+  gap: 12px;
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .navbar {
+    width: calc(100% - 20px);
+    left: 10px;
+    transform: none;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrapper {
+    padding: 32px 24px;
+  }
+
+  .response-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 120px 5% 60px;
+  }
+
+  .quick-options {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 24px;
+  }
+}

@@ -34,35 +34,27 @@
 }
 
 .clients-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: centerW;
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .client-logo {
-  background: white;
-  border: 2px solid rgba(2, 53, 53, 0.08);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-  transition: all 0.3s var(--ease);
-  cursor: pointer;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .client-logo:hover {
-  border-color: var(--secondary);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(2, 37, 37, 0.1);
+  filter: grayscale(0%);
+  opacity: 0.9;
 }
 
-.client-logo-text {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 1px;
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }

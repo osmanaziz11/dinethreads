@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./CTASection.module.css";
 
 const CTASection = () => {
@@ -10,12 +11,18 @@ const CTASection = () => {
         about your custom uniform needs.
       </p>
       <div className={styles["cta-buttons"]}>
-        <a href="#" className={`${styles.btn} ${styles["btn-primary"]}`}>
+        <Link
+          href="/contact"
+          className={`${styles.btn} ${styles["btn-primary"]}`}
+        >
           Contact Us →
-        </a>
-        <a href="#" className={`${styles.btn} ${styles["btn-outline"]}`}>
+        </Link>
+        <Link
+          href="/quote"
+          className={`${styles.btn} ${styles["btn-outline"]}`}
+        >
           Get a Quote
-        </a>
+        </Link>
       </div>
     </section>
   );
